@@ -2,6 +2,11 @@ package com.powernode.foundation;
 
 import java.util.Scanner;
 
+
+/*
+*  switch 两种写法
+*
+* */
 public class SwitchTest {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

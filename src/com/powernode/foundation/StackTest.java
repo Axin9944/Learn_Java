@@ -1,5 +1,10 @@
 package com.powernode.foundation;
 
+
+/*
+*   栈内存的理解，方法先进后出
+*   先执行，后结束
+* */
 public class StackTest {
     public static void main(String[] args) {
         System.out.println("main方法开始执行了");
