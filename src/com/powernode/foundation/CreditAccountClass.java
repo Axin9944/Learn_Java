@@ -30,6 +30,10 @@ public class CreditAccountClass extends AccountClass{
     public CreditAccountClass() {
     }
 
+    public CreditAccountClass(String name, int acounId) {
+        super(name, acounId);
+    }
+
     public CreditAccountClass(String name, int acounId, double credit) {
         super(name, acounId);
         this.credit = credit;
@@ -56,6 +60,10 @@ public class CreditAccountClass extends AccountClass{
     }
 
     //'m1()' cannot override 'm1()' in 'com.powernode.foundation.AccountClass'; overridden method is final
-    //静态方法不能覆盖
+    //静态方法不能覆盖   医疗保障
     //public static final void m1(){}
+
+    public void creditAccountclass(){
+        System.out.println("CreditAccountClass's creditAccountclass method invoke!");
+    }
 }

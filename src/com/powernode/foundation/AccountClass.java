@@ -52,4 +52,8 @@ public class AccountClass {
     public static final void m1(){
         System.out.println("account的m1方法执行，不可覆盖");
     }
+
+    public void accountclass(){
+        System.out.println("AccountClass's accountclass methond invoke!");
+    }
 }
