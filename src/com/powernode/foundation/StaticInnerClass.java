@@ -10,11 +10,11 @@ public class StaticInnerClass {
     private int j = 200;
     //静态方法
     public static void m1(){
-        System.out.println("外部类的 m1 方法执行了");
+        System.out.println("StaticInnerClass的 m1 方法执行了");
     }
     //实例方法
     public void m2(){
-        System.out.println("外部类的 m2 方法执行了");
+        System.out.println("StaticInnerClass的 m2 方法执行了");
     }
     //静态内部类
     public static class InnerClass {
