@@ -1,6 +1,6 @@
 package com.powernode.foundation002;
 
-public class Address {
+public class Address implements Cloneable{
     //省
     private String province;
     //城市
@@ -36,5 +36,19 @@ public class Address {
 
     public void setDistrict(String district) {
         this.district = district;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", district='" + district + '\'' +
+                '}';
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
