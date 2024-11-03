@@ -42,5 +42,26 @@ public class StringBuilderMethodTest {
         // 将字符串设定为指定长度
         stb1.setLength(13);
         System.out.println(stb1);
+
+        //效率
+        System.out.println("=======================================================");
+        long begin = System.currentTimeMillis();
+        String s1 = "";
+        for (int i = 0; i < 100000; i++) {
+            s1 += i;
+        }
+        long end = System.currentTimeMillis();
+        //System.out.println(s1);
+        System.out.println("总耗时："  + (end - begin) + "毫秒"); //2415毫秒
+
+        System.out.println("=======================================================");
+        long begin1 = System.currentTimeMillis();
+        StringBuilder stb2 = new StringBuilder(100000);
+        for (int i = 0; i < 100000; i++) {
+            stb2.append(i);
+        }
+        long end1 = System.currentTimeMillis();
+        //System.out.println(stb2);
+        System.out.println("总耗时: " + (end1 - begin1) + "毫秒");  //2毫秒
     }
 }
