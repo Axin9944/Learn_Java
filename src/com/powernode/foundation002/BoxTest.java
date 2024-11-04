@@ -1,6 +1,6 @@
 package com.powernode.foundation002;
 
-public class NumberTest {
+public class BoxTest {
     public static void main(String[] args) {
         //最大值
         System.out.println("int类型的最大值:" + Integer.MAX_VALUE);
@@ -22,6 +22,7 @@ public class NumberTest {
         Byte b = 1;
         Short s = 2;
         Integer i = 128;
+        //Type may be primitive
         Integer j = 128;
         int x = i;
         Long l = 100000L;
@@ -70,6 +71,41 @@ public class NumberTest {
 
         // Double --> double
         d1 = dob2;
+
+        System.out.println("=======================================================");
+        // 类型转换 Integer
+        // String --> int
+        String s1 = "412";
+        int n1 = Integer.parseInt(s1);
+        System.out.println(n1 + 412);
+
+        //int --> String
+        int n2 = 214;
+        String s2 = String.valueOf(n2);
+        System.out.println(s2 + 412);
+
+        //String --> Integer
+        Integer in1 = Integer.valueOf(s1);
+        System.out.println(in1 + 1999);
+        /*Integer in2 = 412;
+        System.out.println(in2 + 1999);*/
+
+        //Integer --> String
+        String s3 = String.valueOf(in1);
+        System.out.println(s3 + 107);
+
+        //Integer --> int
+        //Unnecessary unboxing
+        int n3 = in1.intValue();
+        int n4 = in1;
+        System.out.println(n3 + 172);
+
+        //int --> Integer
+        // Unnecessary boxing
+        Integer in2 = Integer.valueOf(n4);
+        Integer in3 = n4;
+
+
 
 
     }
