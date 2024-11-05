@@ -105,8 +105,37 @@ public class BoxTest {
         Integer in2 = Integer.valueOf(n4);
         Integer in3 = n4;
 
+        System.out.println("=======================================================");
+        System.out.println("Byte 类型转换");
+        // 类型转换 Byte
+        // byte --> String
+        byte b2 = 3;
+        String sb1 = String.valueOf(b2);
+        System.out.println(sb1 + 3);
 
+        // String --> byte
+        byte b3 = Byte.parseByte(sb1 + 3);
+        System.out.println(b3 + 3);
 
+        // byte --> Byte
+        // Reassigned local variable
+        Byte B1 = Byte.valueOf((byte)(b3 + 3));
+        System.out.println(B1 + 3);
+        B1 = (byte)(b3 + 4);
+        System.out.println(B1 + 3);
 
+        // Byte --> byte
+        byte b4 = (byte)(B1 + 3);
+        System.out.println(b4 + 3);
+        b4 = B1.byteValue();
+        System.out.println(b4 + 4);
+
+        // Byte --> String
+        String sB1 = String.valueOf(B1);
+        System.out.println(sB1 + 3);
+
+        // String --> Byte
+        Byte Bs1 = Byte.valueOf(sB1);
+        System.out.println(Bs1 + 3);
     }
 }
