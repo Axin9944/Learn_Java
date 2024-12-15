@@ -82,6 +82,18 @@ public class ListTest {
                 b1.fly();
             }
         }
+
+        System.out.println("======================================================================");
+        int[] nums10 = {100,200, 101, 999};
+        System.out.println("nums10的最大值：" + searchMax(nums10));
+        System.out.println("nums10的最大值的下标：" + searchMaxIndex(nums10));
+        System.out.println("200在nums10的位置" + findIndexByElt(nums10, 200));
+
+        System.out.println("======================================================================");
+        int[] nums11 = {1000, 99999, 1000000, 999999, 100};
+        System.out.println("nums11的最大值：" + searchMax(nums11));
+        System.out.println("nums11的最大值的下标：" + searchMaxIndex(nums11));
+        System.out.println("100在nums11的位置" + findIndexByElt(nums11, 100));
     }
 
     /*
@@ -92,4 +104,57 @@ public class ListTest {
             System.out.println(num);
         }
     }
+
+    // 获取数组最大值
+    public static int searchMax(int[] arr){
+        // 假设第一个是最大值
+        int maxNumber = arr[0];
+        // 遍历数组
+        for (int num : arr){
+            if (num > maxNumber) {
+                maxNumber = num;
+            }
+        }
+        return maxNumber;
+    }
+
+    // 获取数组最大值的第二种方式
+    public static int maxNumber(int[] arr){
+        // 假设第一个值为最大值
+        int maxNumber = arr[0];
+        // 遍历数组
+        // Method call expected
+        for (int i = 0; i <= arr.length - 1; i++){
+            if (maxNumber < arr[i]) {
+                maxNumber = arr[i];
+            }
+        }
+        return maxNumber;
+    }
+
+    // 获取数组最大值的下标
+    public static int searchMaxIndex(int[] arr){
+        // 假设第一个元素是最大值
+        int maxIndex = 0;
+        // 遍历数组
+        for (int i = 0; i <= arr.length - 1; i++){
+            if (arr[maxIndex] < arr[i]){
+                maxIndex = i;
+            }
+        }
+        return maxIndex;
+    }
+
+    // 通过值找到其在数组第一次出现的位置
+    public static int findIndexByElt(int[] arr, int elt){
+        // 假设第一个就是要找的元素
+        int index = 0;
+        for (int i = 0; i <= arr.length - 1; i++) {
+            if(arr[i] == elt){
+                index =  i;
+            }
+        }
+        return index;
+    }
+
 }
