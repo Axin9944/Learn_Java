@@ -1,5 +1,7 @@
 package com.powernode.foudation003_list;
 
+import java.util.Arrays;
+
 public class ListTest {
 
     public static void main(String[] args) {
@@ -82,6 +84,23 @@ public class ListTest {
                 b1.fly();
             }
         }
+
+        System.out.println("======================================================================");
+        int[] nums12 = {100, 25, 44, 3};
+        reverse(nums12);
+        System.out.println(Arrays.toString(nums12));
+
+        System.out.println("======================================================================");
+        int[] nums13 = {999, 22, 33, 1, 2};
+        System.out.println(Arrays.toString(nums13));
+        reverse2(nums13);
+        System.out.println("nums11反转后：" + Arrays.toString(nums13));
+
+        System.out.println("================================数组扩容====================================");
+        int[] nusm14 = {1, 2, 3, 4, 5, 6, 999};
+        System.out.println(Arrays.toString(nusm14));
+        nusm14 = kuoArr(nusm14);
+        System.out.println("扩容后：" + Arrays.toString(nusm14));
     }
 
     /*
@@ -91,5 +110,38 @@ public class ListTest {
         for(int num : arr){
             System.out.println(num);
         }
+    }
+
+    // 反转数组：
+    // 创建一个新数组，旧数组从右向左存至新数组，旧数组与新数组交换
+    public static void reverse(int[] arr){
+        // 创建新数组接受旧数组的数据
+        int[] newArr = new int[arr.length];
+        // 将原数组从右向左传入新数组
+        for (int i = 0; i < newArr.length; i++){
+            newArr[i] = arr[arr.length - 1 - i];
+        }
+
+        for (int i = 0; i < newArr.length; i++){
+            arr[i] = newArr[i];
+        }
+    }
+    // 反转数组的第二种方式
+    // 首尾互换位置
+    public static void reverse2(int[] arr){
+        for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+    }
+
+    // 对数组进行扩容
+    public static int[] kuoArr(int[] arr){
+        int[] newArr = new int[arr.length * 2];
+        for (int i = 0; i < arr.length; i++) {
+            newArr[i] = arr[i];
+        }
+        return newArr;
     }
 }
