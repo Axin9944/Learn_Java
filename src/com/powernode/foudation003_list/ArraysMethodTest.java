@@ -71,13 +71,14 @@ public class ArraysMethodTest {
         System.out.println(Arrays.toString(ps));
         Arrays.sort(ps);
         System.out.println(Arrays.toString(ps));
+        System.out.println("====================================================");
 
 
         // 将一串数字转换为集合
         Collection list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 111, 222);
         // Raw use of parameterized class 'Iterator'
         Iterator it = list.iterator();
-        while(it.hasNext()){
+        while (it.hasNext()) {
             Object i = it.next();
             System.out.print(i);
             System.out.print(", ");
@@ -86,7 +87,7 @@ public class ArraysMethodTest {
         System.out.println("=======================================================================================");
 
         List list1 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 5, 6, 7);
-        for (int i = 0; i < list1.size(); i++){
+        for (int i = 0; i < list1.size(); i++) {
             System.out.print(list1.get(i));
             System.out.print(", ");
         }
@@ -96,11 +97,11 @@ public class ArraysMethodTest {
 
         // 数组拷贝,第二个参数为要拷贝的长度
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
-        int[] newarr = Arrays.copyOf(arr,arr.length);
+        int[] newarr = Arrays.copyOf(arr, arr.length);
         newarr[0] = 0;
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(newarr));
-        int[] newArr = Arrays.copyOfRange(arr,4,6);
+        int[] newArr = Arrays.copyOfRange(arr, 4, 6);
         System.out.println(Arrays.toString(newArr));  // [5, 6]
         System.out.println("=======================================================================================");
 
@@ -116,10 +117,10 @@ public class ArraysMethodTest {
 
         // binarySearch 二分搜索查找数组
         int[] arr2 = {3, 5, 7, 9, 11, 13};
-        System.out.println(Arrays.binarySearch(arr2,11));
+        System.out.println(Arrays.binarySearch(arr2, 11));
 
         for (int i = 0; i < 15; i++) {
-            System.out.println("数字[" + i + "] :" + Arrays.binarySearch(arr,1, 6, i)); // 不包含to
+            System.out.println("数字[" + i + "] :" + Arrays.binarySearch(arr, 1, 6, i)); // 不包含to
         }
 
         System.out.println("=======================================================================================");
