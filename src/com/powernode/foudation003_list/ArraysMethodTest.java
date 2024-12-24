@@ -4,6 +4,75 @@ import java.util.*;
 
 public class ArraysMethodTest {
     public static void main(String[] args) {
+        // toString() 将数组对象转换为字符串
+        int[] arr_1 = {1, 2, 3, 4, 5, 11, 22, 33, 44, 55};
+        System.out.println(arr_1);
+        System.out.println(Arrays.toString(arr_1));
+
+        String[] names_1 = {"麻子", "陈狗", "明东"};
+        // mplicit call to 'toString()' on array 'names_1'
+        System.out.println(names_1);
+        System.out.println(Arrays.toString(names_1));
+
+        // Type may be primitive
+        Integer i1 = 11;
+        Integer i2 = 22;
+        Integer i3 = 33;
+
+        Integer[] arr_in = {i1, i2, i3};
+        System.out.println(arr_in);
+        System.out.println(Arrays.toString(arr_in));
+
+        System.out.println("====================================================");
+
+        // DeepToString() 将多维数组转换为字符串
+        int[][] arr_deep = {
+                {11, 22, 33},
+                {111, 222, 333},
+                {1111, 2222, 3333}
+        };
+        System.out.println(arr_deep);
+        System.out.println(Arrays.toString(arr_deep));
+        System.out.println(Arrays.deepToString(arr_deep));
+
+        System.out.println("====================================================");
+
+        // equals(); 判断两个数组是否相等
+        int[] arr_2 = {11, 22, 33};
+        int[] arr_3 = {33, 22, 11};
+        System.out.println(Arrays.equals(arr_2, arr_3));
+        System.out.println(arr_2 == arr_3);
+
+        String[] name_2 = {"麻子", "陈狗"};
+        String[] name_3 = {"麻子", "陈狗"};
+        System.out.println(name_2 == name_3);
+        System.out.println(Arrays.equals(name_2, name_3));
+
+        System.out.println("====================================================");
+
+        // sort(); 对数组进行排序
+        Arrays.sort(name_2);
+        System.out.println(Arrays.toString(name_2));
+        Arrays.sort(arr_3);
+        System.out.println(Arrays.toString(arr_3));
+        String[] strs = {"z", "b", "e", "a", "x", "c"};
+        Arrays.sort(strs);
+        System.out.println(Arrays.toString(strs));
+
+        System.out.println("====================================================");
+
+        // 自定义类的比较规则
+        Person p1 = new Person("麻子1", 19);
+        Person p2 = new Person("麻子2", 18);
+        Person p3 = new Person("麻子3", 20);
+        Person p4 = new Person("麻子4", 17);
+
+        Person[] ps = {p1, p2, p3, p4};
+        System.out.println(Arrays.toString(ps));
+        Arrays.sort(ps);
+        System.out.println(Arrays.toString(ps));
+
+
         // 将一串数字转换为集合
         Collection list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 111, 222);
         // Raw use of parameterized class 'Iterator'
@@ -73,5 +142,6 @@ public class ArraysMethodTest {
         System.out.println((end - begin));
 
         System.out.println("=======================================================================================");
+
     }
 }
