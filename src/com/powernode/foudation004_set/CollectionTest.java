@@ -71,5 +71,33 @@ public class CollectionTest {
         System.out.println(c2);
         c2.clear();
         System.out.println(c2.isEmpty());
+
+        System.out.println("====================================================================");
+        // Collention的遍历
+        // 获取迭代器
+        Iterator it = c.iterator();
+        // 判断光标指向的位置是否有元素
+        boolean flag = it.hasNext();
+        // 如果光标位置有元素则获取所处位置的元素
+        if(flag){
+            Object obj = it.next();
+            System.out.println(obj);
+        }
+
+        System.out.println("====================================================================");
+        // 将判断光标写进循环
+        // while
+        Iterator it2 = c.iterator();
+        while (it2.hasNext()){
+            Object obj = it2.next();
+            System.out.println(obj);
+        }
+
+        System.out.println("====================================================================");
+        // for循环
+        for (Iterator it3 = c.iterator(); it3.hasNext();){
+            Object obj = it3.next();
+            System.out.println(obj);
+        }
     }
 }
