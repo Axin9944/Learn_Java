@@ -43,4 +43,8 @@ public class Person implements Comparable {
                 ", age=" + age +
                 '}';
     }
+
+    public void pay(){
+        System.out.println(this.name + " 正在付钱。");
+    }
 }
