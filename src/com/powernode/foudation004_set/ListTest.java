@@ -1,9 +1,8 @@
 package com.powernode.foudation004_set;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import com.powernode.foudation003_list.Person;
+
+import java.util.*;
 
 public class ListTest {
     public static void main(String[] args) {
@@ -155,7 +154,50 @@ public class ListTest {
             lit.previous();
         }
         System.out.println(strList);
+
+        //ListIterator ltor = strList.listIterator();
+
+        // List接口使用Compartor排序
+        User user1 = new User("麻子1" , 20);
+        User user2 = new User("麻子2" , 21);
+        User user3 = new User("麻子3" , 18);
+        User user4 = new User("麻子4" , 22);
+        User user5 = new User("麻子5" , 17);
+
+        User[] users = {user1, user2, user3, user4, user5};
+
+        // System.out.println(user1.age - user2.age);
+        // 排序（自定义类的比较规则）
+        Arrays.sort(users);
+        System.out.println(Arrays.toString(users));
+
+        Person p1 = new Person("麻子5",16);
+        Person p2 = new Person("麻子3",12);
+        Person p3 = new Person("麻子4",21);
+        Person p4 = new Person("麻子1",25);
+        Person p5 = new Person("麻子2",21);
+
+        List<Person> persons = new ArrayList<>();
+        persons.add(p1);
+        persons.add(p2);
+        persons.add(p3);
+        persons.add(p4);
+        persons.add(p5);
+
+
+        System.out.println("person数组排序前" + persons);
+        // 排序？（提供比较器的规则）
+        persons.sort(new PersonComparator());
+
+        System.out.println(persons);
+
+        // 匿名内部类排序规则
+        persons.sort(new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o2.getName().compareTo(o1.getName());
+            }
+        });
+        System.out.println("匿名内部类比较规则" + persons);
     }
-
-
 }
